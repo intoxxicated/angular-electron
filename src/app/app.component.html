@@ -1,0 +1,15 @@
+<h2 style="text-align:center;">NG Tesseract OCR Component</h2>
+
+<h3 style="text-align:center;">OCR with Rect Draw (draw a rect over the image, check console.log)</h3>
+<input type="file" (change)="onImageSelected($event)" accept="image/*">
+
+<div *ngIf="imageUrl" style="margin:20px auto; width:800px; text-align: center;">
+  <app-ocr-scanner-draw
+    [image]="imageUrl"
+    lang="eng"
+    [width]="800"
+    [height]="500"
+    (ocrText)="getOcrText($event)">
+  </app-ocr-scanner-draw>
+</div>
+
